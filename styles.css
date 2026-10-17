@@ -1,0 +1,133 @@
+/* 沐恩Moon 個人官網 — 雪夜主題 */
+:root {
+  --bg: #0b1526;
+  --bg-alt: #101d33;
+  --ink: #f2f6fc;
+  --muted: #9fb0c8;
+  --accent: #7cc4ff;
+  --card: #14253f;
+  --line: rgba(255,255,255,.08);
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, "PingFang HK", "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+  line-height: 1.7;
+}
+a { color: inherit; }
+
+/* NAV */
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 28px;
+  background: rgba(11,21,38,.85); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.logo { font-weight: 800; font-size: 1.15rem; text-decoration: none; }
+.nav-links { display: flex; gap: 22px; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--muted); font-size: .95rem; }
+.nav-links a:hover { color: var(--ink); }
+.nav-cta {
+  border: 1px solid var(--accent); color: var(--accent) !important;
+  padding: 6px 16px; border-radius: 999px;
+}
+
+/* HERO */
+.hero {
+  min-height: 78vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 60px 24px;
+  background:
+    radial-gradient(1200px 500px at 50% -10%, #1b3a63 0%, transparent 60%),
+    var(--bg);
+}
+.hero-kicker { color: var(--accent); letter-spacing: .25em; font-size: .8rem; margin-bottom: 18px; }
+.hero h1 { font-size: clamp(3rem, 9vw, 5.5rem); line-height: 1.1; margin-bottom: 16px; }
+.hero-sub { color: var(--muted); font-size: 1.15rem; margin-bottom: 30px; }
+.hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* BUTTONS */
+.btn {
+  display: inline-block; padding: 12px 30px; border-radius: 999px;
+  text-decoration: none; font-weight: 700; font-size: 1rem;
+  border: 1px solid transparent; cursor: pointer;
+}
+.btn-primary { background: var(--accent); color: #081222; }
+.btn-primary:hover { filter: brightness(1.1); }
+.btn-ghost { border-color: var(--line); color: var(--ink); }
+.btn-ghost:hover { border-color: var(--accent); }
+
+/* SECTIONS */
+.section { padding: 84px 24px; max-width: 1080px; margin: 0 auto; }
+.section-alt { background: var(--bg-alt); max-width: none; }
+.section-alt > * { max-width: 1080px; margin-left: auto; margin-right: auto; }
+.kicker { color: var(--accent); letter-spacing: .25em; font-size: .8rem; margin-bottom: 10px; }
+.section h2 { font-size: 2rem; margin-bottom: 12px; }
+.section-lead { color: var(--muted); margin-bottom: 36px; max-width: 640px; }
+.note { color: var(--muted); font-size: .9rem; margin-top: 26px; }
+
+/* CARDS */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 28px;
+}
+.card-featured { border-color: var(--accent); }
+.card h3 { font-size: 1.25rem; margin-bottom: 4px; }
+.card-en { color: var(--accent); font-size: .78rem; letter-spacing: .15em; margin-bottom: 12px; }
+.card p { color: var(--muted); font-size: .95rem; margin-bottom: 14px; }
+.card ul { list-style: none; }
+.card li { padding: 6px 0; border-top: 1px solid var(--line); font-size: .92rem; }
+.card li::before { content: "✓ "; color: var(--accent); }
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.about-grid p { color: var(--muted); margin-bottom: 16px; }
+.about-grid h3 { font-size: .85rem; letter-spacing: .2em; color: var(--accent); margin-bottom: 14px; }
+.certs { list-style: none; }
+.certs li {
+  display: flex; justify-content: space-between;
+  padding: 10px 0; border-top: 1px solid var(--line); font-size: .95rem;
+}
+.certs span { color: var(--muted); }
+
+/* GALLERY — 換相時把 .ph 換成 <img> 即可，樣式會自動套用 */
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.gallery img { width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius); display: block; }
+.ph {
+  height: 220px; border-radius: var(--radius);
+  border: 1px dashed var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: .85rem; text-align: center; padding: 12px;
+}
+
+/* CONTACT */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.contact-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 0; border-top: 1px solid var(--line);
+  text-decoration: none;
+}
+.contact-label { color: var(--accent); font-size: .85rem; letter-spacing: .1em; }
+.contact-value { font-weight: 600; }
+.contact-form label { display: block; margin-bottom: 16px; font-size: .9rem; color: var(--muted); }
+.contact-form input, .contact-form select, .contact-form textarea {
+  width: 100%; margin-top: 6px; padding: 12px 14px;
+  background: var(--bg); border: 1px solid var(--line); border-radius: 10px;
+  color: var(--ink); font-size: 1rem; font-family: inherit;
+}
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
+  outline: none; border-color: var(--accent);
+}
+
+footer { text-align: center; padding: 30px; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); }
+
+@media (max-width: 720px) {
+  .about-grid, .contact-grid { grid-template-columns: 1fr; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .section { padding: 60px 20px; }
+}
