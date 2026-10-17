@@ -125,6 +125,13 @@ a { color: inherit; }
 /* certificate docs: show the whole document instead of cropping */
 .gallery-docs img { object-fit: contain; background: #fff; padding: 10px; }
 
+/* 微信 QR 彈出 modal */
+.qr-trigger { cursor: pointer; }
+.modal { display: none; position: fixed; inset: 0; z-index: 100; align-items: center; justify-content: center; }
+.modal.open { display: flex; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.75); }
+.modal img { position: relative; width: min(320px, 80vw); border-radius: 14px; }
+
 /* CONTACT */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 .contact-row {

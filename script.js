@@ -10,4 +10,23 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("記得去 formspree.io 拎咗 form ID，換咗 action 先至會真係寄到 email！");
     }
   });
+
+  // 微信 QR 彈出
+  const qrTrigger = document.getElementById("wechat-qr");
+  const qrModal = document.getElementById("qr-modal");
+  if (qrTrigger && qrModal) {
+    const close = () => {
+      qrModal.classList.remove("open");
+      qrModal.setAttribute("aria-hidden", "true");
+    };
+    const open = () => {
+      qrModal.classList.add("open");
+      qrModal.setAttribute("aria-hidden", "false");
+    };
+    qrTrigger.addEventListener("click", open);
+    qrTrigger.addEventListener("keydown", (e) => { if (e.key === "Enter") open(); });
+    qrModal.querySelector(".modal-backdrop").addEventListener("click", close);
+    qrModal.querySelector("img").addEventListener("click", close);
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+  }
 });
