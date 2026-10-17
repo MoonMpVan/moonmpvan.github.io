@@ -122,6 +122,9 @@ a { color: inherit; }
   color: var(--muted); font-size: .85rem; text-align: center; padding: 12px;
 }
 
+/* certificate docs: show the whole document instead of cropping */
+.gallery-docs img { object-fit: contain; background: #fff; padding: 10px; }
+
 /* CONTACT */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 .contact-row {
