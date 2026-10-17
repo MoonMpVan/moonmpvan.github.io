@@ -90,12 +90,12 @@
     <div>
       <h3>CERTIFICATIONS</h3>
       <ul class="certs">
+        <li>CASI Level 1 Snowboard Instructor <span>2023</span></li>
         <li>CASI Level 2 Snowboard Instructor <span>2024</span></li>
         <li>CASI Park 1 <span>2024</span></li>
-        <li>CSIA Level 1 Ski Instructor <span>2025</span></li>
-        <li>AST 1 Avalanche Safety</li>
-        <li>CASI Level 1 Snowboard Instructor <span>2023</span></li>
         <li>China National Level 5 Sports Instructor <span>2024</span></li>
+        <li>AST 1 Avalanche Safety <span>2025</span></li>
+        <li>CSIA Level 1 Ski Instructor <span>2025</span></li>
       </ul>
     </div>
   </div>
@@ -105,14 +105,22 @@
 <section class="section" id="certificates">
   <p class="kicker">CERTIFICATES</p>
   <h2>Certificates</h2>
-  <p class="section-lead">Fully certified, ready to teach.</p>
-  <div class="gallery gallery-docs">
-    <img src="assets/cert1.jpg" alt="CASI Level 1 certificate">
-    <img src="assets/cert2.jpg" alt="CASI Level 2 certificate">
-    <img src="assets/cert3.jpg" alt="CASI Park 1 certificate">
-    <img src="assets/cert4.jpg" alt="AST 1 certificate">
-    <img src="assets/cert5.jpg" alt="China Level 5 instructor certificate">
-    <img src="assets/cert6.jpg" alt="CSIA Level 1 certificate">
+  <p class="section-lead">Fully certified, ready to teach. Use the arrows or thumbnails to browse.</p>
+  <div class="carousel">
+    <div class="carousel-stage">
+      <button class="carousel-arrow carousel-prev" aria-label="Previous">‹</button>
+      <img class="carousel-main-img" src="assets/cert1.jpg" alt="CASI Level 1 certificate">
+      <button class="carousel-arrow carousel-next" aria-label="Next">›</button>
+    </div>
+    <p class="carousel-caption">CASI Level 1</p>
+    <div class="carousel-thumbs">
+      <img src="assets/cert1.jpg" data-full="assets/cert1.jpg" data-label="CASI Level 1" class="active" alt="CASI Level 1 certificate">
+      <img src="assets/cert2.jpg" data-full="assets/cert2.jpg" data-label="CASI Level 2" alt="CASI Level 2 certificate">
+      <img src="assets/cert3.jpg" data-full="assets/cert3.jpg" data-label="CASI Park 1" alt="CASI Park 1 certificate">
+      <img src="assets/cert4.jpg" data-full="assets/cert4.jpg" data-label="AST 1" alt="AST 1 certificate">
+      <img src="assets/cert5.jpg" data-full="assets/cert5.jpg" data-label="China Level 5 Instructor" alt="China Level 5 instructor certificate">
+      <img src="assets/cert6.jpg" data-full="assets/cert6.jpg" data-label="CSIA Level 1" alt="CSIA Level 1 certificate">
+    </div>
   </div>
 </section>
 
@@ -185,4 +193,12 @@
   <p>© 2026 沐恩Moon · Ski & Snowboard Coaching</p>
 </footer>
 
-<sc
+<!-- WeChat QR popup -->
+<div class="modal" id="qr-modal" aria-hidden="true">
+  <div class="modal-backdrop"></div>
+  <img src="assets/wxqrcode.JPG" alt="WeChat QR code MoonMpVan">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

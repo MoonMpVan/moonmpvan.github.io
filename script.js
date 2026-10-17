@@ -29,4 +29,23 @@ document.addEventListener("DOMContentLoaded", () => {
     qrModal.querySelector("img").addEventListener("click", close);
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
   }
+
+  // 證照 carousel：大圖＋左右掣＋縮圖
+  document.querySelectorAll(".carousel").forEach((root) => {
+    const main = root.querySelector(".carousel-main-img");
+    const caption = root.querySelector(".carousel-caption");
+    const thumbs = [...root.querySelectorAll(".carousel-thumbs img")];
+    if (!main || !thumbs.length) return;
+    let idx = 0;
+    const show = (i) => {
+      idx = (i + thumbs.length) % thumbs.length;
+      main.src = thumbs[idx].dataset.full || thumbs[idx].src;
+      main.alt = thumbs[idx].alt;
+      if (caption) caption.textContent = thumbs[idx].dataset.label || "";
+      thumbs.forEach((t, j) => t.classList.toggle("active", j === idx));
+    };
+    root.querySelector(".carousel-prev").addEventListener("click", () => show(idx - 1));
+    root.querySelector(".carousel-next").addEventListener("click", () => show(idx + 1));
+    thumbs.forEach((t, j) => t.addEventListener("click", () => show(j)));
+  });
 });

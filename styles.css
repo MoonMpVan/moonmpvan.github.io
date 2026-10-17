@@ -122,8 +122,15 @@ a { color: inherit; }
   color: var(--muted); font-size: .85rem; text-align: center; padding: 12px;
 }
 
-/* certificate docs: show the whole document instead of cropping */
-.gallery-docs img { object-fit: contain; background: #fff; padding: 10px; }
+/* 證照 carousel：中間大圖＋左右掣＋下面縮圖 */
+.carousel-stage { display: flex; align-items: center; justify-content: center; gap: 18px; }
+.carousel-main-img { max-width: min(560px, 68vw); max-height: 62vh; border-radius: 12px; background: #fff; box-shadow: 0 8px 30px rgba(0,0,0,.35); }
+.carousel-arrow { flex: none; width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--line); background: var(--card); color: var(--ink); font-size: 1.8rem; line-height: 1; cursor: pointer; }
+.carousel-arrow:hover { border-color: var(--accent); color: var(--accent); }
+.carousel-caption { text-align: center; color: var(--accent); margin-top: 14px; font-weight: 600; }
+.carousel-thumbs { display: flex; gap: 10px; justify-content: center; margin-top: 14px; flex-wrap: wrap; }
+.carousel-thumbs img { width: 84px; height: 64px; object-fit: cover; border-radius: 8px; opacity: .45; cursor: pointer; border: 2px solid transparent; }
+.carousel-thumbs img.active { opacity: 1; border-color: var(--accent); }
 
 /* 微信 QR 彈出 modal */
 .qr-trigger { cursor: pointer; }

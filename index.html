@@ -17,7 +17,7 @@
     <a href="#courses">課程</a>
     <a href="#about">關於我</a>
     <a href="#certificates">證照</a>
-    <a href="#work">圖片</a>
+    <a href="#work">學員時刻</a>
     <a href="#contact" class="nav-cta">預約課程</a>
   </div>
 </nav>
@@ -104,14 +104,22 @@
 <section class="section" id="certificates">
   <p class="kicker">CERTIFICATES</p>
   <h2>證照</h2>
-  <p class="section-lead">持證上崗，認證齊全。</p>
-  <div class="gallery gallery-docs">
-    <img src="assets/cert1.jpg" alt="CASI Level 1 證書">
-    <img src="assets/cert2.jpg" alt="CASI Level 2 證書">
-    <img src="assets/cert3.jpg" alt="CASI Park 1 證書">
-    <img src="assets/cert4.jpg" alt="AST 1 證書">
-    <img src="assets/cert5.jpg" alt="中國社會體育指導員五級證書">
-    <img src="assets/cert6.jpg" alt="CSIA Level 1 證書">
+  <p class="section-lead">持證上崗，認證齊全。撳左右掣或下面縮圖睇。</p>
+  <div class="carousel">
+    <div class="carousel-stage">
+      <button class="carousel-arrow carousel-prev" aria-label="上一張">‹</button>
+      <img class="carousel-main-img" src="assets/cert1.jpg" alt="CASI Level 1 證書">
+      <button class="carousel-arrow carousel-next" aria-label="下一張">›</button>
+    </div>
+    <p class="carousel-caption">CASI Level 1</p>
+    <div class="carousel-thumbs">
+      <img src="assets/cert1.jpg" data-full="assets/cert1.jpg" data-label="CASI Level 1" class="active" alt="CASI Level 1 證書">
+      <img src="assets/cert2.jpg" data-full="assets/cert2.jpg" data-label="CASI Level 2" alt="CASI Level 2 證書">
+      <img src="assets/cert3.jpg" data-full="assets/cert3.jpg" data-label="CASI Park 1" alt="CASI Park 1 證書">
+      <img src="assets/cert4.jpg" data-full="assets/cert4.jpg" data-label="AST 1" alt="AST 1 證書">
+      <img src="assets/cert5.jpg" data-full="assets/cert5.jpg" data-label="中國社會體育指導員五級" alt="中國社會體育指導員五級證書">
+      <img src="assets/cert6.jpg" data-full="assets/cert6.jpg" data-label="CSIA Level 1" alt="CSIA Level 1 證書">
+    </div>
   </div>
 </section>
 
@@ -182,6 +190,12 @@
 <footer>
   <p>© 2026 沐恩Moon · 單雙板滑雪指導</p>
 </footer>
+
+<!-- 微信二維碼彈出 -->
+<div class="modal" id="qr-modal" aria-hidden="true">
+  <div class="modal-backdrop"></div>
+  <img src="assets/wxqrcode.JPG" alt="微信二維碼 MoonMpVan">
+</div>
 
 <script src="script.js"></script>
 </body>
