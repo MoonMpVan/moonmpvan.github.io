@@ -453,4 +453,859 @@
 
     .about-story p {
       font-size: 1.04rem;
-      color: #1
+      color: #1E293B;
+      margin-bottom: 1.4rem;
+      line-height: 1.8;
+    }
+
+    .about-highlight {
+      padding: 1.4rem 1.6rem;
+      background: #FFFFFF;
+      border-left: 3px solid #0284C7;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-size: 0.95rem;
+      color: #334155;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+    }
+
+    .cert-box {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    .cert-box-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .cert-box-header h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+    }
+
+    .cert-box-header span {
+      font-size: 0.8rem;
+      color: var(--text-dark-muted);
+    }
+
+    .cert-list {
+      list-style: none;
+    }
+
+    .cert-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 0.6rem;
+      border-bottom: 1px solid var(--border-light);
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+
+    .cert-item:last-child {
+      border-bottom: none;
+    }
+
+    .cert-item:hover {
+      background: #F1F5F9;
+    }
+
+    .cert-name {
+      font-weight: 600;
+      font-size: 0.93rem;
+      color: var(--text-dark);
+    }
+
+    .cert-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      color: var(--text-dark-muted);
+      flex-shrink: 0;
+    }
+
+    .cert-view-btn {
+      color: #0284C7;
+      font-weight: 700;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+    }
+
+    /* Editorial Gallery (Pure Black) */
+    .section-gallery {
+      background: #050608;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.25rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--bg-card);
+      cursor: zoom-in;
+      height: 360px;
+    }
+
+    .gallery-item:nth-child(1) { grid-column: span 7; height: 420px; }
+    .gallery-item:nth-child(2) { grid-column: span 5; height: 420px; }
+    .gallery-item:nth-child(3) { grid-column: span 4; }
+    .gallery-item:nth-child(4) { grid-column: span 4; }
+    .gallery-item:nth-child(5) { grid-column: span 4; }
+    .gallery-item:nth-child(6) { grid-column: span 5; height: 400px; }
+    .gallery-item:nth-child(7) { grid-column: span 7; height: 400px; }
+    .gallery-item:nth-child(8) { grid-column: span 12; height: 420px; }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-item figcaption {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 2.5rem 1.4rem 1.2rem;
+      background: linear-gradient(to top, rgba(5, 6, 8, 0.88), transparent);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      opacity: 0.94;
+    }
+
+    .gallery-item strong {
+      font-size: 0.98rem;
+      display: block;
+    }
+
+    .gallery-item small {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    /* Instagram Official Embed Grid */
+    .reels-embed-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .reel-embed-slot {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .reel-slot-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 0.25rem 0.7rem;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .reel-slot-tag {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+    }
+
+    .reel-slot-title {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--text-white);
+    }
+
+    .reel-embed-frame {
+      width: 100%;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      display: flex;
+      justify-content: center;
+    }
+
+    .reel-embed-frame .instagram-media,
+    .reel-embed-frame iframe.instagram-media {
+      margin: 0 !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      max-width: 100% !important;
+      border-radius: var(--radius-md) !important;
+    }
+
+    /* Contact & Booking */
+    .contact-panel {
+      background: linear-gradient(135deg, #131822 0%, #0D1017 100%);
+      border: 1px solid var(--border-dark);
+      border-radius: 28px;
+      padding: 3.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .contact-panel h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 3.5vw, 2.55rem);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .contact-panel p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.15rem 1.4rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .contact-row:hover {
+      background: rgba(56, 189, 248, 0.1);
+      border-color: rgba(56, 189, 248, 0.45);
+      transform: translateX(4px);
+    }
+
+    .contact-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    .contact-val {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text-white);
+    }
+
+    .contact-action-group {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .pill-mini {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-white);
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-body);
+    }
+
+    .pill-mini:hover {
+      background: var(--accent);
+      color: var(--bg-dark);
+    }
+
+    footer {
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border-dark);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Lightbox Modal */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(5, 6, 8, 0.88);
+      backdrop-filter: blur(10px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-box {
+      position: relative;
+      max-width: 680px;
+      width: 100%;
+      background: #12161D;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-lg);
+      padding: 1.2rem;
+      text-align: center;
+      animation: popIn 0.22s ease;
+    }
+
+    .modal-box img {
+      max-height: 75vh;
+      width: auto;
+      margin: 0 auto;
+      border-radius: 10px;
+    }
+
+    .modal-caption {
+      margin-top: 0.9rem;
+      font-size: 0.95rem;
+      color: #E2E8F0;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: none;
+      background: var(--text-white);
+      color: var(--bg-dark);
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--accent);
+      color: var(--bg-dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.25s ease;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 960px) {
+      .courses-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-grid,
+      .contact-panel {
+        grid-template-columns: 1fr;
+        gap: 2.2rem;
+      }
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .gallery-item:nth-child(n) {
+        grid-column: span 6;
+        height: 280px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links a:not(.nav-lang):not(.nav-cta) {
+        display: none;
+      }
+      .gallery-item:nth-child(n) {
+        grid-column: span 12;
+        height: 300px;
+      }
+      .contact-panel {
+        padding: 2rem 1.4rem;
+      }
+      .profile-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-dot"></span>
+        <span>MOON · 沐恩</span>
+      </a>
+      <div class="nav-links">
+        <a href="#courses">Courses</a>
+        <a href="#about">About &amp; Credentials</a>
+        <a href="#work">Selected Work</a>
+        <a href="#reels">Reels</a>
+        <a href="index.html" class="nav-lang">中文</a>
+        <a href="#contact" class="nav-cta">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Full-Viewport Hero -->
+  <header class="hero">
+    <div class="hero-bg">
+      <img src="assets/15.jpg" alt="Moon (Kevin) Snowboard and Ski Instructor at Mt Seymour, Vancouver">
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">SNOWBOARD &amp; SKI COACHING · MT SEYMOUR, VANCOUVER</span>
+        <h1>From First Turns to Carving,<br>Ride With Confidence.</h1>
+        <p class="hero-sub">CASI Level 2 Snowboard &amp; CSIA Level 1 Ski Certified Instructor. Clear biomechanics and frame-by-frame video analysis to help you progress safely and break through plateaus.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Book Free Consultation</a>
+          <a href="#courses" class="btn-ghost">Explore Courses</a>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <strong>300+</strong>
+          <span>Days on Snow</span>
+        </div>
+        <div class="stat-item">
+          <strong>150+</strong>
+          <span>Days Teaching on Mountain</span>
+        </div>
+        <div class="stat-item">
+          <strong>CASI L2 / CSIA L1</strong>
+          <span>Dual-Certified Snowsports Pro</span>
+        </div>
+        <div class="stat-item">
+          <strong>MT SEYMOUR</strong>
+          <span>2026/27 Vancouver Home Mountain</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Courses -->
+  <section id="courses">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">COURSES</span>
+        <h2>Tailored On-Snow Coaching for Every Level</h2>
+        <p>Available for both Snowboard and Ski. All sessions are conducted on-mountain as 1-on-1 or small-group lessons. Contact directly for seasonal rates.</p>
+      </div>
+
+      <div class="courses-grid">
+        <article class="course-card reveal">
+          <div>
+            <div class="course-en">01 · FIRST TIMER</div>
+            <h3>First-Timer Experience</h3>
+            <p class="course-desc">Stepping onto snow for the first time? Choose snowboard or ski and build confidence from scratch in two hours: strapping in, neutral stance, falling leaf, and J-turns—safe, structured, and stress-free.</p>
+          </div>
+          <ul class="course-tags">
+            <li>2-Hour 1-on-1</li>
+            <li>Rental Gear Guidance</li>
+            <li>Zero Experience</li>
+          </ul>
+        </article>
+
+        <article class="course-card featured reveal">
+          <span class="badge-popular">MOST POPULAR</span>
+          <div>
+            <div class="course-en">02 · PRIVATE LESSON</div>
+            <h3>1-on-1 Private Coaching</h3>
+            <p class="course-desc">The fastest path to progression. Customized feedback targeting your exact goals: smooth edge transitions, dynamic carving, powder trees, moguls, or freestyle park fundamentals.</p>
+          </div>
+          <ul class="course-tags">
+            <li>2 Hr / Half Day / Full Day</li>
+            <li>Frame-by-Frame Video Review</li>
+            <li>Beginner to Advanced</li>
+          </ul>
+        </article>
+
+        <article class="course-card reveal">
+          <div>
+            <div class="course-en">03 · SMALL GROUP</div>
+            <h3>Small Group Session</h3>
+            <p class="course-desc">Learn alongside friends or family in a relaxed, supportive atmosphere. Best for riders of similar ability looking for personalized cues while sharing the session rate.</p>
+          </div>
+          <ul class="course-tags">
+            <li>2–4 Riders</li>
+            <li>2 Hours Minimum</li>
+            <li>Friends &amp; Family</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="resort-banner reveal">
+        <span>📍 <strong>2026/27 Winter Home Mountain:</strong> Mt Seymour, Vancouver</span>
+        <span>🇯🇵 <strong>2027/28 Winter Bookings Open:</strong> Niseko, Hokkaido, Japan</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Interactive Credentials -->
+  <section id="about" class="section-light">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">ABOUT &amp; CREDENTIALS</span>
+        <h2>Understand the Mechanics, Ride With Less Effort</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-story reveal">
+          <div class="profile-card" id="profile-card">
+            <img src="assets/portrait.jpg" alt="Moon (Kevin) Portrait" class="profile-avatar" onerror="document.getElementById('profile-card').style.display='none'">
+            <div class="profile-meta">
+              <strong>Moon · Kevin</strong>
+              <span>CASI Level 2 Snowboard &amp; CSIA Level 1 Ski Instructor</span>
+              <span>Former Instructor in Niseko (Japan), Whakapapa (NZ) &amp; Vancouver</span>
+            </div>
+          </div>
+
+          <p>I’m <strong>Moon (Kevin)</strong>, a dual-certified snowboard and ski instructor based at Mt Seymour in Vancouver. With over 300 days on snow and 150+ days of on-mountain teaching experience across Canada, New Zealand (Whakapapa), and Japan (Niseko), I coach riders ranging from young kids to adults.</p>
+          <p>Most riders hit a plateau because they copy body positions without understanding how center of mass interacts with the board or ski edge. In my lessons, I break down movement mechanics into clear, actionable steps—paired with instant video playback so you can see and feel every adjustment run after run.</p>
+          <div class="about-highlight">
+            💡 <strong>Instruction Languages:</strong> Fluent in English, Mandarin, and Cantonese for seamless communication on the hill.
+          </div>
+        </div>
+
+        <div class="cert-box reveal">
+          <div class="cert-box-header">
+            <h3>Certifications &amp; Training</h3>
+            <span>Click any item to inspect certificate</span>
+          </div>
+          <ul class="cert-list">
+            <li class="cert-item" onclick="openModal('assets/cert2.jpg', 'CASI Level 2 Snowboard Instructor Certificate')">
+              <span class="cert-name">CASI Level 2 Snowboard Instructor</span>
+              <span class="cert-meta">2024 <span class="cert-view-btn">View ↗</span></span>
+            </li>
+            <li class="cert-item" onclick="openModal('assets/cert3.jpg', 'CASI Park 1 Snowboard Instructor Certificate')">
+              <span class="cert-name">CASI Park 1 Instructor</span>
+              <span class="cert-meta">2024 <span class="cert-view-btn">View ↗</span></span>
+            </li>
+            <li class="cert-item" onclick="openModal('assets/cert6.jpg', 'CSIA Level 1 Ski Instructor Certificate')">
+              <span class="cert-name">CSIA Level 1 Ski Instructor</span>
+              <span class="cert-meta">2025 <span class="cert-view-btn">View ↗</span></span>
+            </li>
+            <li class="cert-item" onclick="openModal('assets/cert4.jpg', 'Avalanche Skills Training Level 1 (AST 1)')">
+              <span class="cert-name">AST 1 Avalanche Safety Training</span>
+              <span class="cert-meta">2025 <span class="cert-view-btn">View ↗</span></span>
+            </li>
+            <li class="cert-item" onclick="openModal('assets/cert1.jpg', 'CASI Level 1 Snowboard Instructor Certificate')">
+              <span class="cert-name">CASI Level 1 Snowboard Instructor</span>
+              <span class="cert-meta">2023 <span class="cert-view-btn">View ↗</span></span>
+            </li>
+            <li class="cert-item" onclick="openModal('assets/cert5.jpg', 'Chinese National Social Sports Instructor (Level 5)')">
+              <span class="cert-name">National Social Sports Instructor (Level 5)</span>
+              <span class="cert-meta">2024 <span class="cert-view-btn">View ↗</span></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Work Gallery -->
+  <section id="work" class="section-gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">SELECTED WORK</span>
+        <h2>Moments on Snow</h2>
+        <p>From 1-on-1 kids coaching in Niseko and backcountry powder at Asahidake to training in Whistler and teaching in New Zealand.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="gallery-item reveal" onclick="openModal('assets/24.jpg', '1-on-1 Kids Private Lesson · HANAZONO, NISEKO')">
+          <img src="assets/24.jpg" alt="1-on-1 Kids Coaching in Hanazono 1" loading="lazy">
+          <figcaption>
+            <div>
+              <strong>1-on-1 Kids Coaching</strong>
+              <small>HANAZONO · KIDS COACHING</small>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal" onclick="openModal('assets/11.jpg', 'On-Snow Technical Training Session · WHISTLER')">
+          <img src="assets/11.jpg" alt="Technical Training in Whistler" loading="lazy">
+          <figcaption>
+            <div>
+              <strong>Technical Training Session</strong>
+              <small>WHISTLER · TRAINING</small>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal" onclick="openModal('assets/20.jpg', 'Snowboard Groundtrick Freeze · FREESTYLE')">
+          <img src="assets/20.jpg" alt="Snowboard Groundtrick Action" loading="lazy">
+          <figcaption>
+            <div>
+              <strong>Groundtrick Freeze</strong>
+              <small>GROUNDTRICK · FREESTYLE</small>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal" onclick="openModal('assets/25.jpg', 'Building Balance &amp; Confidence · HANAZONO, NISEKO')">
+          <img src="assets/25.jpg" alt="1-on-1 Kids Coaching in Hanazono 2" loading="lazy">
+          <figcaption>
+            <div>
+              <strong>Step-by-Step Balance Progression</strong>
+              <small>HANAZONO · 1-ON-1 LESSON</small>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal" onclick="openModal('assets/1.jpg', 'Backcountry Powder Riding · ASAHIDAKE, HOKKAIDO')">
+          <img src="assets/1.jpg" alt="Asahidake Backcountry Powder" loading="lazy">
+          <figcaption>
+            <div>
+              <strong>Asahidake Backcountry Powder</strong>
+              <small>ASAHIDAKE · BACKCOUNTRY</small>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal" onclick="openModal('assets/26.jpg', 'On-Mountain Kids Guidance · HANAZONO, NISEKO')">
+          <img src="assets/26.jpg" alt="1-on-1 Kids Coaching in Hanazono 3" loading="lazy">
+          <figcaption>
+            <div>
+              <strong>Private Kids Progression</strong>
+              <small>HANAZONO · ON SNOW</small>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal" onclick="openModal('assets/7.jpg', 'Snow School Instructor Life · WHAKAPAPA, NEW ZEALAND')">
+          <img src="assets/7.jpg" alt="Teaching at Whakapapa New Zealand 1" loading="lazy">
+          <figcaption>
+            <div>
+              <strong>Snow School Coaching in NZ</strong>
+              <small>WHAKAPAPA · NEW ZEALAND</small>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal" onclick="openModal('assets/30.jpg', 'Southern Hemisphere Winter Season · WHAKAPAPA, NEW ZEALAND')">
+          <img src="assets/30.jpg" alt="Teaching at Whakapapa New Zealand 2" loading="lazy">
+          <figcaption>
+            <div>
+              <strong>Southern Hemisphere Season</strong>
+              <small>WHAKAPAPA · INSTRUCTOR LIFE</small>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram Reels Section -->
+  <section id="reels">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">INSTAGRAM REELS · @MOONMPVAN</span>
+        <h2>Introduction, Mountain Humor &amp; Gear Unboxing</h2>
+        <p>Get to know my coaching background, on-snow life, and latest snowboard gear unboxings straight from Instagram.</p>
+      </div>
+
+      <div class="reels-embed-grid">
+        <!-- Slot 1: Introduction -->
+        <div class="reel-embed-slot reveal">
+          <div class="reel-slot-header">
+            <span class="reel-slot-tag">01 · ABOUT ME</span>
+            <span class="reel-slot-title">Instructor Introduction</span>
+          </div>
+          <div class="reel-embed-frame">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DbPYD1nlifm/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DbPYD1nlifm/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DbPYD1nlifm/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by 沐恩Moon🏂 𝓚𝓮𝓿𝓲𝓷 (@moonmpvan)</a></p></div></blockquote>
+          </div>
+        </div>
+
+        <!-- Slot 2: Mountain Humor -->
+        <div class="reel-embed-slot reveal">
+          <div class="reel-slot-header">
+            <span class="reel-slot-tag">02 · SNOW HUMOR</span>
+            <span class="reel-slot-title">Mountain Life &amp; Memes</span>
+          </div>
+          <div class="reel-embed-frame">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DeUTat7AaC7/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DeUTat7AaC7/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DeUTat7AaC7/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by 沐恩Moon🏂 𝓚𝓮𝓿𝓲𝓷 (@moonmpvan)</a></p></div></blockquote>
+          </div>
+        </div>
+
+        <!-- Slot 3: Gear Unboxing -->
+        <div class="reel-embed-slot reveal">
+          <div class="reel-slot-header">
+            <span class="reel-slot-tag">03 · UNBOXING</span>
+            <span class="reel-slot-title">Snowboard Gear Unboxing</span>
+          </div>
+          <div class="reel-embed-frame">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DejwHYKAWuC/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DejwHYKAWuC/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DejwHYKAWuC/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by 沐恩Moon🏂 𝓚𝓮𝓿𝓲𝓷 (@moonmpvan)</a></p></div></blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Booking -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-panel reveal">
+        <div>
+          <span class="eyebrow">BOOKING &amp; INQUIRY</span>
+          <h2>Ready to Hit the Slopes?<br>Let’s Plan Your Progression</h2>
+          <p>Let me know whether you’re looking to ride snowboard or ski, your current skill level, and your preferred dates at Mt Seymour—I’ll put together the best session plan for you.</p>
+        </div>
+
+        <div class="contact-methods">
+          <a href="https://www.instagram.com/moonmpvan" target="_blank" rel="noopener" class="contact-row">
+            <div>
+              <span class="contact-label">Instagram (Fastest Reply &amp; Daily Clips)</span>
+              <span class="contact-val">@MoonMpVan</span>
+            </div>
+            <span class="pill-mini">DM on Instagram →</span>
+          </a>
+
+          <div class="contact-row" onclick="copyWeChat()">
+            <div>
+              <span class="contact-label">WeChat (Click to Copy WeChat ID)</span>
+              <span class="contact-val">MoonMpVan</span>
+            </div>
+            <div class="contact-action-group">
+              <button type="button" class="pill-mini">Copy ID</button>
+              <button type="button" class="pill-mini" onclick="event.stopPropagation(); openModal('assets/wxqrcode.jpg', 'Scan QR Code to Add WeChat: MoonMpVan')">Show QR</button>
+            </div>
+          </div>
+
+          <a href="mailto:hunglc23@gmail.com?subject=Mt%20Seymour%20Snowsports%20Lesson%20Inquiry%20-%20Moon" class="contact-row">
+            <div>
+              <span class="contact-label">Email Inquiry</span>
+              <span class="contact-val">hunglc23@gmail.com</span>
+            </div>
+            <span class="pill-mini">Send Email →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Moon (Kevin) · CASI &amp; CSIA Certified Snowsports Instructor · Mt Seymour, Vancouver</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="modal" onclick="closeModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+      <img id="modal-img" src="" alt="">
+      <p id="modal-caption" class="modal-caption"></p>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">Copied WeChat ID: MoonMpVan ✓</div>
+
+  <!-- Instagram Official Embed Script -->
+  <script async src="https://www.instagram.com/embed.js"></script>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const modalImg = document.getElementById('modal-img');
+    const modalCaption = document.getElementById('modal-caption');
+
+    function openModal(src, caption) {
+      modalImg.src = src;
+      modalCaption.textContent = caption || '';
+      lightbox.classList.add('active');
+    }
+
+    function closeModal() {
+      lightbox.classList.remove('active');
+      modalImg.src = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    function copyWeChat() {
+      navigator.clipboard.writeText('MoonMpVan').then(() => {
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2400);
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
