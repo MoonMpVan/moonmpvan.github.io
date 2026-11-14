@@ -1,202 +1,1306 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>沐恩Moon — 單雙板滑雪指導 | Ski & Snowboard Coaching</title>
-<meta name="description" content="沐恩Moon，CASI／CSIA 認證單雙板滑雪指導員。溫哥華私人／小團體滑雪課程招生中。">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>沐恩 Moon · 溫哥華 Mt Seymour 單雙板滑雪指導員</title>
+  <meta name="description" content="沐恩 Moon，加拿大 CASI Level 2 單板及 CSIA Level 1 雙板認證指導員。提供溫哥華 Mt Seymour 及日本二世古雪場實地教學。" />
+  
+  <!-- Google Fonts: 英文幾何運動字體 + 繁體中文無襯線 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #090B0E;
+      --bg-card: #12161D;
+      --bg-card-hover: #181E27;
+      --bg-light: #F3F5F8;
+      --text-white: #F8FAFC;
+      --text-muted: #94A3B8;
+      --text-dark: #0F172A;
+      --text-dark-muted: #475569;
+      --accent: #38BDF8;
+      --border-dark: rgba(255, 255, 255, 0.08);
+      --border-light: rgba(15, 23, 42, 0.1);
+      --font-en: 'Space Grotesk', sans-serif;
+      --font-zh: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius-lg: 20px;
+      --radius-md: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      font-family: var(--font-zh);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img, video {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .eyebrow {
+      font-family: var(--font-en);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+      display: inline-block;
+    }
+
+    .section-light .eyebrow {
+      color: #0284C7;
+    }
+
+    .container {
+      width: min(1180px, 90vw);
+      margin: 0 auto;
+    }
+
+    /* 懸浮毛玻璃導覽列 */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1rem 0;
+      background: rgba(9, 11, 14, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .nav-inner {
+      width: min(1180px, 90vw);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-family: var(--font-en);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-white);
+    }
+
+    .nav-lang {
+      font-family: var(--font-en);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border: 1px solid var(--border-dark);
+      border-radius: 999px;
+      color: var(--text-white);
+    }
+
+    .nav-cta {
+      background: var(--text-white);
+      color: var(--bg-dark);
+      padding: 0.45rem 1.05rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+      color: var(--bg-dark);
+      transform: translateY(-1px);
+    }
+
+    /* 首屏全幅 Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 8rem 0 3.5rem;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      filter: brightness(0.76) contrast(1.06);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        180deg,
+        rgba(9, 11, 14, 0.35) 0%,
+        rgba(9, 11, 14, 0.45) 45%,
+        rgba(9, 11, 14, 0.96) 95%,
+        #090B0E 100%
+      );
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-sub {
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
+      color: #CBD5E1;
+      max-width: 560px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .btn-primary {
+      background: var(--text-white);
+      color: var(--bg-dark);
+      padding: 0.9rem 1.8rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text-white);
+      padding: 0.9rem 1.8rem;
+      border-radius: 999px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.25s ease;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: var(--text-white);
+    }
+
+    /* 首屏底部數據條 */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .stat-item strong {
+      display: block;
+      font-family: var(--font-en);
+      font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+      font-weight: 700;
+      color: var(--text-white);
+      line-height: 1.2;
+    }
+
+    .stat-item span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* 通用區塊間距 */
+    section {
+      padding: 6.5rem 0;
+    }
+
+    .section-header {
+      max-width: 650px;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.22;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+    }
+
+    /* 課程區塊 (Dark) */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .course-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-6px);
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .course-card.featured {
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.08) 0%, var(--bg-card) 45%);
+    }
+
+    .badge-popular {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-family: var(--font-en);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--bg-dark);
+    }
+
+    .course-en {
+      font-family: var(--font-en);
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .course-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .course-desc {
+      color: #CBD5E1;
+      font-size: 0.95rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .course-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .course-tags li {
+      font-size: 0.8rem;
+      padding: 0.32rem 0.75rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #E2E8F0;
+    }
+
+    .resort-banner {
+      margin-top: 2rem;
+      padding: 1.25rem 1.6rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-dark);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.92rem;
+      color: #CBD5E1;
+    }
+
+    .resort-banner strong {
+      color: var(--text-white);
+    }
+
+    /* 關於我 & 互動證照 (Light 淺色對比區塊) */
+    .section-light {
+      background: var(--bg-light);
+      color: var(--text-dark);
+    }
+
+    .section-light .section-header p {
+      color: var(--text-dark-muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-story p {
+      font-size: 1.06rem;
+      color: #1E293B;
+      margin-bottom: 1.4rem;
+      line-height: 1.85;
+    }
+
+    .about-highlight {
+      padding: 1.4rem 1.6rem;
+      background: #FFFFFF;
+      border-left: 3px solid #0284C7;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-size: 0.95rem;
+      color: #334155;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+    }
+
+    .cert-box {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    .cert-box-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .cert-box-header h3 {
+      font-size: 1.15rem;
+    }
+
+    .cert-box-header span {
+      font-size: 0.8rem;
+      color: var(--text-dark-muted);
+    }
+
+    .cert-list {
+      list-style: none;
+    }
+
+    .cert-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 0.6rem;
+      border-bottom: 1px solid var(--border-light);
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+
+    .cert-item:last-child {
+      border-bottom: none;
+    }
+
+    .cert-item:hover {
+      background: #F1F5F9;
+    }
+
+    .cert-name {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+    }
+
+    .cert-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-en);
+      font-size: 0.82rem;
+      color: var(--text-dark-muted);
+    }
+
+    .cert-view-btn {
+      color: #0284C7;
+      font-weight: 700;
+      font-family: var(--font-zh);
+      font-size: 0.8rem;
+    }
+
+    /* 滑雪時刻 Editorial 錯落畫廊 (Pure Black) */
+    .section-gallery {
+      background: #050608;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.25rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--bg-card);
+      cursor: zoom-in;
+      height: 360px;
+    }
+
+    .gallery-item:nth-child(1) { grid-column: span 7; height: 420px; }
+    .gallery-item:nth-child(2) { grid-column: span 5; height: 420px; }
+    .gallery-item:nth-child(3) { grid-column: span 4; }
+    .gallery-item:nth-child(4) { grid-column: span 4; }
+    .gallery-item:nth-child(5) { grid-column: span 4; }
+    .gallery-item:nth-child(6) { grid-column: span 5; height: 400px; }
+    .gallery-item:nth-child(7) { grid-column: span 7; height: 400px; }
+    .gallery-item:nth-child(8) { grid-column: span 12; height: 420px; }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-item figcaption {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 2.5rem 1.4rem 1.2rem;
+      background: linear-gradient(to top, rgba(5, 6, 8, 0.88), transparent);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      opacity: 0.94;
+    }
+
+    .gallery-item strong {
+      font-size: 0.98rem;
+      display: block;
+    }
+
+    .gallery-item small {
+      font-family: var(--font-en);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    /* Instagram 官方嵌入專屬容器 */
+    .reels-embed-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(326px, 1fr));
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .reel-embed-slot {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .reel-slot-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .reel-slot-tag {
+      font-family: var(--font-en);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+    }
+
+    .reel-slot-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-white);
+    }
+
+    .reel-embed-frame {
+      width: 100%;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      display: flex;
+      justify-content: center;
+    }
+
+    /* 確保 Instagram 嵌入 iframe 寬度自適應不破版 */
+    .reel-embed-frame .instagram-media {
+      margin: 0 !important;
+      width: 100% !important;
+      min-width: 100% !important;
+      max-width: 100% !important;
+      border-radius: var(--radius-md) !important;
+    }
+
+    /* 尚未貼上嵌入碼時的預設引导框 */
+    .embed-placeholder {
+      width: 100%;
+      min-height: 440px;
+      border: 1px dashed rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.02);
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .embed-placeholder strong {
+      color: var(--text-white);
+      font-size: 1rem;
+    }
+
+    .embed-placeholder p {
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .embed-placeholder a {
+      margin-top: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+    }
+
+    /* 聯繫與預約區 */
+    .contact-panel {
+      background: linear-gradient(135deg, #131822 0%, #0D1017 100%);
+      border: 1px solid var(--border-dark);
+      border-radius: 28px;
+      padding: 3.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .contact-panel h2 {
+      font-size: clamp(1.9rem, 3.5vw, 2.55rem);
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    .contact-panel p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.15rem 1.4rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .contact-row:hover {
+      background: rgba(56, 189, 248, 0.1);
+      border-color: rgba(56, 189, 248, 0.45);
+      transform: translateX(4px);
+    }
+
+    .contact-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    .contact-val {
+      font-family: var(--font-en);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text-white);
+    }
+
+    .contact-action-group {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .pill-mini {
+      font-size: 0.78rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-white);
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-zh);
+    }
+
+    .pill-mini:hover {
+      background: var(--accent);
+      color: var(--bg-dark);
+    }
+
+    footer {
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border-dark);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* 通用彈窗 Lightbox */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(5, 6, 8, 0.88);
+      backdrop-filter: blur(10px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-box {
+      position: relative;
+      max-width: 680px;
+      width: 100%;
+      background: #12161D;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-lg);
+      padding: 1.2rem;
+      text-align: center;
+      animation: popIn 0.22s ease;
+    }
+
+    .modal-box img {
+      max-height: 75vh;
+      width: auto;
+      margin: 0 auto;
+      border-radius: 10px;
+    }
+
+    .modal-caption {
+      margin-top: 0.9rem;
+      font-size: 0.95rem;
+      color: #E2E8F0;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: none;
+      background: var(--text-white);
+      color: var(--bg-dark);
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    /* 複製成功提示 Toast */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--accent);
+      color: var(--bg-dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.25s ease;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* 滾動淡入動畫 */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 960px) {
+      .courses-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-grid,
+      .contact-panel {
+        grid-template-columns: 1fr;
+        gap: 2.2rem;
+      }
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .gallery-item:nth-child(n) {
+        grid-column: span 6;
+        height: 280px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links a:not(.nav-lang):not(.nav-cta) {
+        display: none;
+      }
+      .gallery-item:nth-child(n) {
+        grid-column: span 12;
+        height: 300px;
+      }
+      .contact-panel {
+        padding: 2rem 1.4rem;
+      }
+    }
+  </style>
 </head>
-<body>
+<body id="top">
 
-<!-- ============ NAV ============ -->
-<nav class="nav">
-  <a class="logo" href="#top">沐恩Moon</a>
-  <div class="nav-links">
-    <a href="en.html" class="lang-toggle">EN</a>
-    <a href="#courses">課程</a>
-    <a href="#about">關於我</a>
-    <a href="#certificates">證照</a>
-    <a href="#work">學員時刻</a>
-    <a href="#contact" class="nav-cta">預約課程</a>
-  </div>
-</nav>
-
-<!-- ============ HERO ============ -->
-<header class="hero" id="top">
-  <div class="hero-inner">
-    <p class="hero-kicker">SNOWBOARD COACHING · VANCOUVER</p>
-    <h1>沐恩Moon</h1>
-    <p class="hero-sub">單雙板滑雪指導員<br>從第一步到刻滑，陪你滑出自信。</p>
-    <div class="hero-ctas">
-      <a href="#contact" class="btn btn-primary">預約免費諮詢</a>
-      <a href="#courses" class="btn btn-ghost">睇下課程</a>
-    </div>
-  </div>
-  <img class="hero-bg" src="assets/15.jpg" alt="沐恩Moon 滑雪">
-</header>
-
-<!-- ============ COURSES 招生 ============ -->
-<section class="section" id="courses">
-  <p class="kicker">COURSES</p>
-  <h2>課程</h2>
-  <p class="section-lead">單板、雙板都教。所有課程均為雪場實地教學，按你的程度度身訂造。價錢請直接聯繫查詢。</p>
-
-  <div class="cards">
-    <div class="card">
-      <h3>新手體驗</h3>
-      <p class="card-en">FIRST TIMER</p>
-      <p>第一次上雪？單板雙板任揀，兩小時由零開始：穿板、站姿、落葉飄、J 轉彎，安全第一，唔使驚跌。</p>
-      <ul>
-        <li>2 小時一對一</li>
-        <li>裝備借用建議</li>
-        <li>適合完全新手</li>
-      </ul>
-    </div>
-    <div class="card card-featured">
-      <h3>一對一私人課</h3>
-      <p class="card-en">PRIVATE LESSON</p>
-      <p>進度最快嘅選擇。單板／雙板，針對你的弱點逐一拆解：換刃、刻滑、蘑菇道、公園入門都得。</p>
-      <ul>
-        <li>2 小時／半日／全日</li>
-        <li>影片動作分析</li>
-        <li>初級至高級</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>小團體課</h3>
-      <p class="card-en">SMALL GROUP · 2–4 人</p>
-      <p>同朋友一齊學，氣氛最好。程度相近一齊報名，價錢更化算。</p>
-      <ul>
-        <li>2–4 人同行</li>
-        <li>2 小時起</li>
-        <li>適合朋友／屋企人</li>
-      </ul>
-    </div>
-  </div>
-  <p class="note">📍 主要雪場：Mt Seymour／Grouse／Cypress（2026/27 雪季）；2027/28 雪季將於 Niseko 開課。</p>
-</section>
-
-<!-- ============ ABOUT ============ -->
-<section class="section section-alt" id="about">
-  <p class="kicker">ABOUT</p>
-  <h2>關於我</h2>
-  <div class="about-grid">
-    <div>
-      <p>我係沐恩Moon，喺溫哥華教單板同雙板滑雪。滑過 300+ 日雪、教過 150+ 日課，去過加拿大、新西蘭、日本嘅滑雪場，由二世古到本地雪場，學生由細路到大人都有。</p>
-      <p>我相信滑雪唔係靠死操，而係明白每個動作背後嘅原理。課堂上我會用你聽得明嘅語言拆解動作，必要時重播影片逐格睇。</p>
-    </div>
-    <div>
-      <h3>證照 CERTIFICATIONS</h3>
-      <ul class="certs">
-        <li>CASI Level 1 單板指導員 <span>2023</span></li>
-        <li>CASI Level 2 單板指導員 <span>2024</span></li>
-        <li>CASI Park 1 公園指導員 <span>2024</span></li>
-        <li>中國職業社會體育指導員（五級）<span>2024</span></li>
-        <li>AST 1 雪崩安全課程 <span>2025</span></li>
-        <li>CSIA Level 1 雙板指導員 <span>2025</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CERTIFICATES 證照展示 ============ -->
-<section class="section" id="certificates">
-  <p class="kicker">CERTIFICATES</p>
-  <h2>證照</h2>
-  <p class="section-lead">持證上崗，認證齊全。撳左右掣或下面縮圖睇。</p>
-  <div class="carousel">
-    <div class="carousel-stage">
-      <button class="carousel-arrow carousel-prev" aria-label="上一張">‹</button>
-      <img class="carousel-main-img" src="assets/cert1.jpg" alt="CASI Level 1 證書">
-      <button class="carousel-arrow carousel-next" aria-label="下一張">›</button>
-    </div>
-    <p class="carousel-caption">CASI Level 1</p>
-    <div class="carousel-thumbs">
-      <img src="assets/cert1.jpg" data-full="assets/cert1.jpg" data-label="CASI Level 1" class="active" alt="CASI Level 1 證書">
-      <img src="assets/cert2.jpg" data-full="assets/cert2.jpg" data-label="CASI Level 2" alt="CASI Level 2 證書">
-      <img src="assets/cert3.jpg" data-full="assets/cert3.jpg" data-label="CASI Park 1" alt="CASI Park 1 證書">
-      <img src="assets/cert4.jpg" data-full="assets/cert4.jpg" data-label="AST 1" alt="AST 1 證書">
-      <img src="assets/cert5.jpg" data-full="assets/cert5.jpg" data-label="中國社會體育指導員五級" alt="中國社會體育指導員五級證書">
-      <img src="assets/cert6.jpg" data-full="assets/cert6.jpg" data-label="CSIA Level 1" alt="CSIA Level 1 證書">
-    </div>
-  </div>
-</section>
-
-<!-- ============ WORK 作品牆 ============ -->
-<section class="section" id="work">
-  <p class="kicker">SELECTED WORK</p>
-  <h2>滑雪時刻</h2>
-  <p class="section-lead">雪地的故事，逐格收藏。</p>
-  <div class="gallery">
-  <img src="assets/24.jpg" alt="滑雪相 1">
-  <img src="assets/11.jpg" alt="滑雪相 2">
-  <img src="assets/20.jpg" alt="滑雪相 3">
-  <img src="assets/25.jpg" alt="滑雪相 4">
-  <img src="assets/1.jpg" alt="滑雪相 5">
-  <img src="assets/26.jpg" alt="滑雪相 6">
-  <img src="assets/7.jpg" alt="滑雪相 7">
-  <img src="assets/30.jpg" alt="滑雪相 8">
-</div>
-</section>
-
-<!-- ============ CONTACT 聯繫 ============ -->
-<section class="section section-alt" id="contact">
-  <p class="kicker">CONTACT</p>
-  <h2>聯繫我</h2>
-  <p class="section-lead">想報名、問課程、或者只係想傾下學滑雪嘅事，歡迎直接搵我。</p>
-
-  <div class="contact-grid">
-    <div class="contact-links">
-      <a class="contact-row" href="https://www.instagram.com/moonmpvan" target="_blank" rel="noopener">
-        <span class="contact-label">Instagram</span>
-        <span class="contact-value">@MoonMpVan →</span>
+  <!-- 導覽列 -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-dot"></span>
+        <span>沐恩 MOON</span>
       </a>
-      <div class="contact-row qr-trigger" id="wechat-qr" role="button" tabindex="0" title="撳我睇二維碼">
-        <span class="contact-label">微信</span>
-        <span class="contact-value">MoonMpVan · 撳我睇 QR →</span>
+      <div class="nav-links">
+        <a href="#courses">課程方案</a>
+        <a href="#about">關於與證照</a>
+        <a href="#work">滑雪時刻</a>
+        <a href="#reels">影音頻道</a>
+        <a href="en.html" class="nav-lang">EN</a>
+        <a href="#contact" class="nav-cta">預約諮詢</a>
       </div>
-      <a class="contact-row" href="mailto:hunglc23@gmail.com">
-        <span class="contact-label">Email</span>
-        <span class="contact-value">hunglc23@gmail.com →</span>
-      </a>
-      <p class="note">或者用右邊個表單，訊息會直接寄去我 email。</p>
     </div>
+  </nav>
 
-    <!-- 表單：去 formspree.io 免費註冊，拎條 form ID 換下面 action 入面 YOUR_FORM_ID -->
-    <form class="contact-form" action="https://formspree.io/f/mnpjwegy" method="POST">
-      <label>名
-        <input type="text" name="name" required placeholder="點稱呼你">
-      </label>
-      <label>聯繫方式（IG／微信／電話）
-        <input type="text" name="contact" required placeholder="方便我覆你">
-      </label>
-      <label>想學咩？
-        <select name="interest">
-          <option>新手體驗</option>
-          <option>一對一私人課</option>
-          <option>小團體課</option>
-          <option>其他／未諗好</option>
-        </select>
-      </label>
-      <label>留言
-        <textarea name="message" rows="4" placeholder="程度、想學嘅嘢、方便嘅時間…"></textarea>
-      </label>
-      <button type="submit" class="btn btn-primary">送出</button>
-    </form>
+  <!-- 全幅首屏 Hero -->
+  <header class="hero">
+    <div class="hero-bg">
+      <img src="assets/15.jpg" alt="沐恩 Moon 溫哥華 Mt Seymour 單雙板滑雪指導">
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">SNOWBOARD &amp; SKI COACHING · MT SEYMOUR, VANCOUVER</span>
+        <h1>從第一步到刻滑，<br>陪你滑出自信。</h1>
+        <p class="hero-sub">加拿大 CASI Level 2 單板・CSIA Level 1 雙板認證指導員。結合淺顯易懂的力學原理與逐格影片分析，陪你安全進階、突破滑行瓶頸。</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">預約免費諮詢</a>
+          <a href="#courses" class="btn-ghost">查看課程方案</a>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <strong>300+</strong>
+          <span>雪季滑行日數</span>
+        </div>
+        <div class="stat-item">
+          <strong>150+</strong>
+          <span>雪場實戰教學日</span>
+        </div>
+        <div class="stat-item">
+          <strong>CASI L2 / CSIA L1</strong>
+          <span>加拿大單雙板雙棲認證</span>
+        </div>
+        <div class="stat-item">
+          <strong>MT SEYMOUR</strong>
+          <span>2026/27 溫哥華駐場雪山</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 課程體系 -->
+  <section id="courses">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">COURSES</span>
+        <h2>按程度量身打造的雪場課程</h2>
+        <p>單板、雙板皆可預約。所有課程均為雪場一對一或小班實地指導，課程費用歡迎直接聯繫洽詢。</p>
+      </div>
+
+      <div class="courses-grid">
+        <article class="course-card reveal">
+          <div>
+            <div class="course-en">01 · FIRST TIMER</div>
+            <h3>新手體驗課</h3>
+            <p class="course-desc">第一次踏上雪道？單板或雙板任選，兩小時由零開始建立安全感：穿脫雪板、基本站姿、落葉飄與 J 型轉彎，循序漸進、無需擔心跌倒。</p>
+          </div>
+          <ul class="course-tags">
+            <li>2 小時一對一</li>
+            <li>裝備租借建議</li>
+            <li>零基礎首選</li>
+          </ul>
+        </article>
+
+        <article class="course-card featured reveal">
+          <span class="badge-popular">MOST POPULAR</span>
+          <div>
+            <div class="course-en">02 · PRIVATE LESSON</div>
+            <h3>一對一私人指導</h3>
+            <p class="course-desc">進度最快的選擇。針對你的滑行習慣逐一拆解瓶頸：順暢換刃、Carving 刻滑、粉雪樹林、蘑菇道或公園入門。</p>
+          </div>
+          <ul class="course-tags">
+            <li>2 小時／半日／全日</li>
+            <li>逐格影片動作分析</li>
+            <li>初級至進階</li>
+          </ul>
+        </article>
+
+        <article class="course-card reveal">
+          <div>
+            <div class="course-en">03 · SMALL GROUP</div>
+            <h3>小團體同行課</h3>
+            <p class="course-desc">與朋友或家人一同學習，氣氛輕鬆愉快。程度相近者一起報名，兼顧個人動作微調，同時分攤學費更具性價比。</p>
+          </div>
+          <ul class="course-tags">
+            <li>2–4 人同行</li>
+            <li>2 小時起</li>
+            <li>朋友／家庭首選</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="resort-banner reveal">
+        <span>📍 <strong>2026/27 冬季主要駐場雪山：</strong>溫哥華 Mt Seymour</span>
+        <span>🇯🇵 <strong>2027/28 冬季開放預約：</strong>日本北海道 Niseko 二世古</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 關於我 & 互動證照 -->
+  <section id="about" class="section-light">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">ABOUT &amp; CREDENTIALS</span>
+        <h2>不靠盲目苦練，理解原理才能滑得輕鬆</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-story reveal">
+          <p>我是<strong>沐恩 Moon</strong>，常駐溫哥華 Mt Seymour 教授單板與雙板滑雪。累積滑行超過 300 天、實戰教學逾 150 天，足跡遍及加拿大、紐西蘭與日本北海道二世古，學員涵蓋兒童至成人各年齡層。</p>
+          <p>許多人學滑雪遇到瓶頸，往往是因為只顧著模仿動作，卻不了解重心與雪板鋼邊如何互動。課堂上我會用清晰易懂的語言拆解力學原理，配合即時影片重播逐格對比，讓你在每一趟滑行中都能精準微調。</p>
+          <div class="about-highlight">
+            💡 <strong>授課語言：</strong>國語、廣東話、英語流利溝通，無論本地華人或海外雪友皆可無障礙上課。
+          </div>
+        </div>
+
+        <div class="cert-box reveal">
+          <div class="cert-box-header">
+            <h3>專業資格認證</h3>
+            <span>點擊項目查看證書原圖</span>
+          </div>
+          <ul class="cert-list">
+            <li class="cert-item" onclick="openModal('assets/cert2.jpg', 'CASI Level 2 加拿大二級單板指導員證書')">
+              <span class="cert-name">CASI Level 2 單板指導員</span>
+              <span class="cert-meta">2024 <span class="cert-view-btn">查看證書 ↗</span></span>
+            </li>
+            <li class="cert-item" onclick="openModal('assets/cert3.jpg', 'CASI Park 1 加拿大單板公園指導員證書')">
+              <span class="cert-name">CASI Park 1 公園指導員</span>
+              <span class="cert-meta">2024 <span class="cert-view-btn">查看證書 ↗</span></span>
+            </li>
+            <li class="cert-item" onclick="openModal('assets/cert6.jpg', 'CSIA Level 1 加拿大一級雙板指導員證書')">
+              <span class="cert-name">CSIA Level 1 雙板指導員</span>
+              <span class="cert-meta">2025 <span class="cert-view-btn">查看證書 ↗</span></span>
+            </li>
+            <li class="cert-item" onclick="openModal('assets/cert4.jpg', 'AST 1 加拿大雪崩安全一級認證')">
+              <span class="cert-name">AST 1 雪崩安全課程</span>
+              <span class="cert-meta">2025 <span class="cert-view-btn">查看證書 ↗</span></span>
+            </li>
+            <li class="cert-item" onclick="openModal('assets/cert1.jpg', 'CASI Level 1 加拿大一級單板指導員證書')">
+              <span class="cert-name">CASI Level 1 單板指導員</span>
+              <span class="cert-meta">2023 <span class="cert-view-btn">查看證書 ↗</span></span>
+            </li>
+            <li class="cert-item" onclick="openModal('assets/cert5.jpg', '中國職業社會體育指導員（五級）證書')">
+              <span class="cert-name">中國職業社會體育指導員（五級）</span>
+              <span class="cert-meta">2024 <span class="cert-view-btn">查看證書 ↗</span></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 滑雪時刻 錯落畫廊 -->
+  <section id="work" class="section-gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">SELECTED WORK</span>
+        <h2>滑雪時刻</h2>
+        <p>從溫哥華 Mt Seymour 雪道到日本二世古粉雪，雪地的故事逐格收藏。</p>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="gallery-item reveal" onclick="openModal('assets/24.jpg', '雪場實戰與刻滑紀錄 · MT SEYMOUR')">
+          <img src="assets/24.jpg" alt="滑雪時刻 1" loading="lazy">
+          <figcaption>
+            <div>
+              <strong>雪道實戰紀錄</strong>
+              <small>MT SEYMOUR · SNOWBOARD</small>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal" onclick="openModal('assets/11.jpg', '山脊晨光與滑行視角 · ALPINE')">
+          <img src="assets/11.jpg" alt="滑雪時刻 2" loading="lazy">
+          <figcaption>
+            <div>
+              <strong>山脊視角</strong>
+              <small>ALPINE · SESSION</small>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal" onclick="openModal('assets/20.jpg', '換刃與重心控制 · CARVING')">
+          <img src="assets/20.jpg" alt="滑雪時刻 3" loading="lazy">
+          <figcaption>
+            <div>
+              <strong>邊刃控制</strong>
+              <small>CARVING · TECHNIQUE</small>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal" onclick="openModal('assets/25.jpg', '粉雪滑行時刻 · POWDER')">
+          <img src="assets/25.jpg" alt="滑雪時刻 4" loading="lazy">
+          <figcaption>
+            <div>
+              <strong>粉雪巡航</strong>
+              <small>NISEKO · POWDER</small>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal" onclick="openModal('assets/1.jpg', '雪山風景紀錄 · MOUNTAIN')">
+          <img src="assets/1.jpg" alt="滑雪時刻 5" loading="lazy">
+          <figcaption>
+            <div>
+              <strong>雪場印象</strong>
+              <small>WINTER · LANDSCAPE</small>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal" onclick="openModal('assets/26.jpg', '雪場教學現場 · COACHING')">
+          <img src="assets/26.jpg" alt="滑雪時刻 6" loading="lazy">
+          <figcaption>
+            <div>
+              <strong>雪場教學現場</strong>
+              <small>COACHING · ON SNOW</small>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal" onclick="openModal('assets/7.jpg', '進階滑行動態捕捉 · RIDING')">
+          <img src="assets/7.jpg" alt="滑雪時刻 7" loading="lazy">
+          <figcaption>
+            <div>
+              <strong>動態捕捉</strong>
+              <small>FREERIDE · ACTION</small>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal" onclick="openModal('assets/30.jpg', '冬季雪季足跡 · SEASON')">
+          <img src="assets/30.jpg" alt="滑雪時刻 8" loading="lazy">
+          <figcaption>
+            <div>
+              <strong>雪季足跡</strong>
+              <small>CANADA &amp; JAPAN · ARCHIVE</small>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram Reels 官方嵌入區塊 -->
+  <section id="reels">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">INSTAGRAM REELS · @MOONMPVAN</span>
+        <h2>自我介紹、裝備挑選與開箱實測</h2>
+        <p>在 Instagram 分享我的個人介紹、不同滑雪裝備的挑選建議，以及雪具開箱影片。</p>
+      </div>
+
+      <div class="reels-embed-grid">
+        <!-- 欄位 1：自我介紹 -->
+        <div class="reel-embed-slot reveal">
+          <div class="reel-slot-header">
+            <span class="reel-slot-tag">01 · ABOUT ME</span>
+            <span class="reel-slot-title">指導員自我介紹</span>
+          </div>
+          <div class="reel-embed-frame">
+            <!-- 【請刪除下方 embed-placeholder，直接貼上你「自我介紹」Reel 的 Instagram 嵌入 <blockquote> 代碼】 -->
+            <div class="embed-placeholder">
+              <strong>自我介紹 Reel</strong>
+              <p>請在此處貼上你的 Instagram「自我介紹」影片嵌入碼（&lt;blockquote class="instagram-media"...&gt;）</p>
+              <a href="https://www.instagram.com/moonmpvan" target="_blank" rel="noopener">前往 @MoonMpVan 複製嵌入碼 →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 欄位 2：裝備挑選（可依不同裝備複製多個此欄位） -->
+        <div class="reel-embed-slot reveal">
+          <div class="reel-slot-header">
+            <span class="reel-slot-tag">02 · GEAR GUIDE</span>
+            <span class="reel-slot-title">如何挑選合適的裝備</span>
+          </div>
+          <div class="reel-embed-frame">
+            <!-- 【請刪除下方 embed-placeholder，直接貼上你「裝備挑選」Reel 的 Instagram 嵌入 <blockquote> 代碼】 -->
+            <div class="embed-placeholder">
+              <strong>裝備挑選指南 Reel</strong>
+              <p>請在此處貼上你的 Instagram「裝備挑選」影片嵌入碼（若有多部不同裝備影片，可直接複製整個 reel-embed-slot 區塊新增）</p>
+              <a href="https://www.instagram.com/moonmpvan" target="_blank" rel="noopener">前往 @MoonMpVan 複製嵌入碼 →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 欄位 3：開箱視頻 -->
+        <div class="reel-embed-slot reveal">
+          <div class="reel-slot-header">
+            <span class="reel-slot-tag">03 · UNBOXING</span>
+            <span class="reel-slot-title">滑雪裝備開箱實測</span>
+          </div>
+          <div class="reel-embed-frame">
+            <!-- 【請刪除下方 embed-placeholder，直接貼上你「開箱視頻」Reel 的 Instagram 嵌入 <blockquote> 代碼】 -->
+            <div class="embed-placeholder">
+              <strong>裝備開箱 Reel</strong>
+              <p>請在此處貼上你的 Instagram「雪具開箱」影片嵌入碼（&lt;blockquote class="instagram-media"...&gt;）</p>
+              <a href="https://www.instagram.com/moonmpvan" target="_blank" rel="noopener">前往 @MoonMpVan 複製嵌入碼 →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 聯繫與預約 -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-panel reveal">
+        <div>
+          <span class="eyebrow">BOOKING &amp; INQUIRY</span>
+          <h2>準備好出發了嗎？<br>直接聯繫討論你的目標</h2>
+          <p>歡迎告訴我想學習單板或雙板、目前滑行程度以及預計於 Mt Seymour 上課的日期，我會為你規劃最適合的課程方案。</p>
+        </div>
+
+        <div class="contact-methods">
+          <a href="https://www.instagram.com/moonmpvan" target="_blank" rel="noopener" class="contact-row">
+            <div>
+              <span class="contact-label">Instagram（最快回覆・觀看日常影片）</span>
+              <span class="contact-val">@MoonMpVan</span>
+            </div>
+            <span class="pill-mini">私訊聯繫 →</span>
+          </a>
+
+          <div class="contact-row" onclick="copyWeChat()">
+            <div>
+              <span class="contact-label">微信 WeChat（點擊直接複製微信帳號）</span>
+              <span class="contact-val">MoonMpVan</span>
+            </div>
+            <div class="contact-action-group">
+              <button type="button" class="pill-mini">複製帳號</button>
+              <button type="button" class="pill-mini" onclick="event.stopPropagation(); openModal('assets/wxqrcode.jpg', '掃描二維碼加入微信：MoonMpVan')">顯示 QR</button>
+            </div>
+          </div>
+
+          <a href="mailto:hunglc23@gmail.com?subject=Mt%20Seymour%20滑雪課程洽詢%20-%20沐恩Moon" class="contact-row">
+            <div>
+              <span class="contact-label">Email 郵件洽詢</span>
+              <span class="contact-val">hunglc23@gmail.com</span>
+            </div>
+            <span class="pill-mini">發送郵件 →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 沐恩 Moon · CASI &amp; CSIA Certified Snowsports Instructor · Mt Seymour, Vancouver</p>
+    </div>
+  </footer>
+
+  <!-- 通用燈箱 Modal -->
+  <div id="lightbox" class="modal" onclick="closeModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()" aria-label="關閉">✕</button>
+      <img id="modal-img" src="" alt="">
+      <p id="modal-caption" class="modal-caption"></p>
+    </div>
   </div>
-</section>
 
-<footer>
-  <p>© 2026 沐恩Moon · 單雙板滑雪指導</p>
-</footer>
+  <!-- 複製成功提示 -->
+  <div id="toast" class="toast">已複製微信帳號 MoonMpVan ✓</div>
 
-<!-- 微信二維碼彈出 -->
-<div class="modal" id="qr-modal" aria-hidden="true">
-  <div class="modal-backdrop"></div>
-  <img src="assets/wxqrcode.jpg" alt="微信二維碼 MoonMpVan">
-</div>
+  <!-- Instagram 官方嵌入腳本（全頁只需保留這一行，貼上 blockquote 後會自動渲染） -->
+  <script async src="https://www.instagram.com/embed.js"></script>
 
-<script src="script.js"></script>
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const modalImg = document.getElementById('modal-img');
+    const modalCaption = document.getElementById('modal-caption');
+
+    function openModal(src, caption) {
+      modalImg.src = src;
+      modalCaption.textContent = caption || '';
+      lightbox.classList.add('active');
+    }
+
+    function closeModal() {
+      lightbox.classList.remove('active');
+      modalImg.src = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    function copyWeChat() {
+      navigator.clipboard.writeText('MoonMpVan').then(() => {
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2400);
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
