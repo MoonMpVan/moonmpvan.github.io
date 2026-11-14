@@ -412,6 +412,42 @@
       align-items: start;
     }
 
+    /* 脫雪鏡個人形象照卡片 */
+    .profile-card {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      background: #FFFFFF;
+      padding: 1.25rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      margin-bottom: 1.8rem;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .profile-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 16px;
+      object-fit: cover;
+      object-position: center top;
+      flex-shrink: 0;
+      background: #E2E8F0;
+    }
+
+    .profile-meta strong {
+      display: block;
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      margin-bottom: 0.2rem;
+    }
+
+    .profile-meta span {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--text-dark-muted);
+    }
+
     .about-story p {
       font-size: 1.06rem;
       color: #1E293B;
@@ -567,7 +603,7 @@
     /* Instagram 官方嵌入專屬容器 */
     .reels-embed-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(326px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
       align-items: start;
     }
@@ -576,17 +612,17 @@
       background: var(--bg-card);
       border: 1px solid var(--border-dark);
       border-radius: var(--radius-lg);
-      padding: 1.25rem;
+      padding: 1.1rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.9rem;
     }
 
     .reel-slot-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 0.75rem;
+      padding: 0 0.25rem 0.7rem;
       border-bottom: 1px solid var(--border-dark);
     }
 
@@ -612,49 +648,13 @@
       justify-content: center;
     }
 
-    /* 確保 Instagram 嵌入 iframe 寬度自適應不破版 */
-    .reel-embed-frame .instagram-media {
+    .reel-embed-frame .instagram-media,
+    .reel-embed-frame iframe.instagram-media {
       margin: 0 !important;
       width: 100% !important;
-      min-width: 100% !important;
+      min-width: 0 !important;
       max-width: 100% !important;
       border-radius: var(--radius-md) !important;
-    }
-
-    /* 尚未貼上嵌入碼時的預設引导框 */
-    .embed-placeholder {
-      width: 100%;
-      min-height: 440px;
-      border: 1px dashed rgba(255, 255, 255, 0.18);
-      border-radius: var(--radius-md);
-      background: rgba(255, 255, 255, 0.02);
-      padding: 2rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      gap: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .embed-placeholder strong {
-      color: var(--text-white);
-      font-size: 1rem;
-    }
-
-    .embed-placeholder p {
-      font-size: 0.85rem;
-      line-height: 1.6;
-    }
-
-    .embed-placeholder a {
-      margin-top: 0.5rem;
-      font-size: 0.82rem;
-      color: var(--accent);
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      padding: 0.4rem 1rem;
-      border-radius: 999px;
     }
 
     /* 聯繫與預約區 */
@@ -873,6 +873,10 @@
       .contact-panel {
         padding: 2rem 1.4rem;
       }
+      .profile-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -1003,7 +1007,17 @@
 
       <div class="about-grid">
         <div class="about-story reveal">
-          <p>我是<strong>沐恩 Moon</strong>，常駐溫哥華 Mt Seymour 教授單板與雙板滑雪。累積滑行超過 300 天、實戰教學逾 150 天，足跡遍及加拿大、紐西蘭與日本北海道二世古，學員涵蓋兒童至成人各年齡層。</p>
+          <!-- 脫雪鏡個人形象照：上傳 assets/portrait.jpg 後自動顯示；未上傳前自動隱藏不破圖 -->
+          <div class="profile-card" id="profile-card">
+            <img src="assets/portrait.jpg" alt="沐恩 Moon 個人照" class="profile-avatar" onerror="document.getElementById('profile-card').style.display='none'">
+            <div class="profile-meta">
+              <strong>沐恩 Moon · Kevin</strong>
+              <span>加拿大 CASI Level 2 / CSIA Level 1 認證指導員</span>
+              <span>曾任教於日本二世古、紐西蘭 Whakapapa 及溫哥華雪場</span>
+            </div>
+          </div>
+
+          <p>我是<strong>沐恩 Moon</strong>，常駐溫哥華 Mt Seymour 教授單板與雙板滑雪。累積滑行超過 300 天、實戰教學逾 150 天，曾於日本北海道二世古、紐西蘭 Whakapapa 及加拿大雪場擔任指導員，學員涵蓋兒童至成人各年齡層。</p>
           <p>許多人學滑雪遇到瓶頸，往往是因為只顧著模仿動作，卻不了解重心與雪板鋼邊如何互動。課堂上我會用清晰易懂的語言拆解力學原理，配合即時影片重播逐格對比，讓你在每一趟滑行中都能精準微調。</p>
           <div class="about-highlight">
             💡 <strong>授課語言：</strong>國語、廣東話、英語流利溝通，無論本地華人或海外雪友皆可無障礙上課。
@@ -1046,92 +1060,100 @@
     </div>
   </section>
 
-  <!-- 滑雪時刻 錯落畫廊 -->
+  <!-- 滑雪時刻 錯落畫廊（已按實際拍攝地點與內容精準標註） -->
   <section id="work" class="section-gallery">
     <div class="container">
       <div class="section-header reveal">
         <span class="eyebrow">SELECTED WORK</span>
         <h2>滑雪時刻</h2>
-        <p>從溫哥華 Mt Seymour 雪道到日本二世古粉雪，雪地的故事逐格收藏。</p>
+        <p>從北海道二世古兒童教學、旭岳野雪、惠斯勒集訓到紐西蘭雪校執教，紀錄各地雪場足跡。</p>
       </div>
 
       <div class="gallery-grid">
-        <figure class="gallery-item reveal" onclick="openModal('assets/24.jpg', '雪場實戰與刻滑紀錄 · MT SEYMOUR')">
-          <img src="assets/24.jpg" alt="滑雪時刻 1" loading="lazy">
+        <!-- 24.jpg：Hanazono 1對1兒童教學 -->
+        <figure class="gallery-item reveal" onclick="openModal('assets/24.jpg', '二世古花園雪場 · 兒童一對一私人教學紀錄 · HANAZONO')">
+          <img src="assets/24.jpg" alt="Hanazono 兒童一對一教學 1" loading="lazy">
           <figcaption>
             <div>
-              <strong>雪道實戰紀錄</strong>
-              <small>MT SEYMOUR · SNOWBOARD</small>
+              <strong>兒童一對一雪道教學</strong>
+              <small>HANAZONO · KIDS COACHING</small>
             </div>
           </figcaption>
         </figure>
 
-        <figure class="gallery-item reveal" onclick="openModal('assets/11.jpg', '山脊晨光與滑行視角 · ALPINE')">
-          <img src="assets/11.jpg" alt="滑雪時刻 2" loading="lazy">
+        <!-- 11.jpg：Whistler 與朋友訓練 -->
+        <figure class="gallery-item reveal" onclick="openModal('assets/11.jpg', '惠斯勒雪場技術訓練 · WHISTLER')">
+          <img src="assets/11.jpg" alt="Whistler 技術訓練" loading="lazy">
           <figcaption>
             <div>
-              <strong>山脊視角</strong>
-              <small>ALPINE · SESSION</small>
+              <strong>雪場技術集訓</strong>
+              <small>WHISTLER · TRAINING</small>
             </div>
           </figcaption>
         </figure>
 
-        <figure class="gallery-item reveal" onclick="openModal('assets/20.jpg', '換刃與重心控制 · CARVING')">
-          <img src="assets/20.jpg" alt="滑雪時刻 3" loading="lazy">
+        <!-- 20.jpg：平花 Groundtrick -->
+        <figure class="gallery-item reveal" onclick="openModal('assets/20.jpg', '單板平花動作定格 · GROUNDTRICK')">
+          <img src="assets/20.jpg" alt="單板平花 Groundtrick" loading="lazy">
           <figcaption>
             <div>
-              <strong>邊刃控制</strong>
-              <small>CARVING · TECHNIQUE</small>
+              <strong>平花動作定格</strong>
+              <small>GROUNDTRICK · FREESTYLE</small>
             </div>
           </figcaption>
         </figure>
 
-        <figure class="gallery-item reveal" onclick="openModal('assets/25.jpg', '粉雪滑行時刻 · POWDER')">
-          <img src="assets/25.jpg" alt="滑雪時刻 4" loading="lazy">
+        <!-- 25.jpg：Hanazono 1對1兒童教學 -->
+        <figure class="gallery-item reveal" onclick="openModal('assets/25.jpg', '二世古花園雪場 · 兒童平衡與滑行引導 · HANAZONO')">
+          <img src="assets/25.jpg" alt="Hanazono 兒童一對一教學 2" loading="lazy">
           <figcaption>
             <div>
-              <strong>粉雪巡航</strong>
-              <small>NISEKO · POWDER</small>
+              <strong>循序建立雪感與平衡</strong>
+              <small>HANAZONO · 1-ON-1 LESSON</small>
             </div>
           </figcaption>
         </figure>
 
-        <figure class="gallery-item reveal" onclick="openModal('assets/1.jpg', '雪山風景紀錄 · MOUNTAIN')">
-          <img src="assets/1.jpg" alt="滑雪時刻 5" loading="lazy">
+        <!-- 1.jpg：旭岳 Backcountry 粉雪 -->
+        <figure class="gallery-item reveal" onclick="openModal('assets/1.jpg', '北海道旭岳 Backcountry 野雪粉雪 · ASAHIDAKE')">
+          <img src="assets/1.jpg" alt="旭岳 Backcountry 粉雪" loading="lazy">
           <figcaption>
             <div>
-              <strong>雪場印象</strong>
-              <small>WINTER · LANDSCAPE</small>
+              <strong>旭岳野雪粉雪巡航</strong>
+              <small>ASAHIDAKE · BACKCOUNTRY</small>
             </div>
           </figcaption>
         </figure>
 
-        <figure class="gallery-item reveal" onclick="openModal('assets/26.jpg', '雪場教學現場 · COACHING')">
-          <img src="assets/26.jpg" alt="滑雪時刻 6" loading="lazy">
+        <!-- 26.jpg：Hanazono 1對1兒童教學 -->
+        <figure class="gallery-item reveal" onclick="openModal('assets/26.jpg', '二世古花園雪場 · 兒童一對一動作指導 · HANAZONO')">
+          <img src="assets/26.jpg" alt="Hanazono 兒童一對一教學 3" loading="lazy">
           <figcaption>
             <div>
-              <strong>雪場教學現場</strong>
-              <small>COACHING · ON SNOW</small>
+              <strong>兒童滑行姿勢引導</strong>
+              <small>HANAZONO · ON SNOW</small>
             </div>
           </figcaption>
         </figure>
 
-        <figure class="gallery-item reveal" onclick="openModal('assets/7.jpg', '進階滑行動態捕捉 · RIDING')">
-          <img src="assets/7.jpg" alt="滑雪時刻 7" loading="lazy">
+        <!-- 7.jpg：紐西蘭 Whakapapa 工作 -->
+        <figure class="gallery-item reveal" onclick="openModal('assets/7.jpg', '紐西蘭 Whakapapa 滑雪學校執教日常 · NEW ZEALAND')">
+          <img src="assets/7.jpg" alt="紐西蘭 Whakapapa 執教紀錄 1" loading="lazy">
           <figcaption>
             <div>
-              <strong>動態捕捉</strong>
-              <small>FREERIDE · ACTION</small>
+              <strong>紐西蘭雪校執教日常</strong>
+              <small>WHAKAPAPA · NEW ZEALAND</small>
             </div>
           </figcaption>
         </figure>
 
-        <figure class="gallery-item reveal" onclick="openModal('assets/30.jpg', '冬季雪季足跡 · SEASON')">
-          <img src="assets/30.jpg" alt="滑雪時刻 8" loading="lazy">
+        <!-- 30.jpg：紐西蘭 Whakapapa 工作 -->
+        <figure class="gallery-item reveal" onclick="openModal('assets/30.jpg', '紐西蘭 Whakapapa 南半球雪季工作足跡 · NEW ZEALAND')">
+          <img src="assets/30.jpg" alt="紐西蘭 Whakapapa 執教紀錄 2" loading="lazy">
           <figcaption>
             <div>
-              <strong>雪季足跡</strong>
-              <small>CANADA &amp; JAPAN · ARCHIVE</small>
+              <strong>南半球雪季工作足跡</strong>
+              <small>WHAKAPAPA · INSTRUCTOR LIFE</small>
             </div>
           </figcaption>
         </figure>
@@ -1144,8 +1166,8 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="eyebrow">INSTAGRAM REELS · @MOONMPVAN</span>
-        <h2>自我介紹、裝備挑選與開箱實測</h2>
-        <p>在 Instagram 分享我的個人介紹、不同滑雪裝備的挑選建議，以及雪具開箱影片。</p>
+        <h2>自我介紹、雪場趣味日常與裝備開箱</h2>
+        <p>透過 Instagram 短片快速認識我的個人背景、雪場日常點滴與最新滑雪裝備開箱。</p>
       </div>
 
       <div class="reels-embed-grid">
@@ -1156,44 +1178,29 @@
             <span class="reel-slot-title">指導員自我介紹</span>
           </div>
           <div class="reel-embed-frame">
-            <!-- 【請刪除下方 embed-placeholder，直接貼上你「自我介紹」Reel 的 Instagram 嵌入 <blockquote> 代碼】 -->
-            <div class="embed-placeholder">
-              <strong>自我介紹 Reel</strong>
-              <p>請在此處貼上你的 Instagram「自我介紹」影片嵌入碼（&lt;blockquote class="instagram-media"...&gt;）</p>
-              <a href="https://www.instagram.com/moonmpvan" target="_blank" rel="noopener">前往 @MoonMpVan 複製嵌入碼 →</a>
-            </div>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DbPYD1nlifm/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DbPYD1nlifm/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DbPYD1nlifm/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by 沐恩Moon🏂 𝓚𝓮𝓿𝓲𝓷 (@moonmpvan)</a></p></div></blockquote>
           </div>
         </div>
 
-        <!-- 欄位 2：裝備挑選（可依不同裝備複製多個此欄位） -->
+        <!-- 欄位 2：雪場趣味 Meme -->
         <div class="reel-embed-slot reveal">
           <div class="reel-slot-header">
-            <span class="reel-slot-tag">02 · GEAR GUIDE</span>
-            <span class="reel-slot-title">如何挑選合適的裝備</span>
+            <span class="reel-slot-tag">02 · SNOW HUMOR</span>
+            <span class="reel-slot-title">雪場趣味日常 · Meme</span>
           </div>
           <div class="reel-embed-frame">
-            <!-- 【請刪除下方 embed-placeholder，直接貼上你「裝備挑選」Reel 的 Instagram 嵌入 <blockquote> 代碼】 -->
-            <div class="embed-placeholder">
-              <strong>裝備挑選指南 Reel</strong>
-              <p>請在此處貼上你的 Instagram「裝備挑選」影片嵌入碼（若有多部不同裝備影片，可直接複製整個 reel-embed-slot 區塊新增）</p>
-              <a href="https://www.instagram.com/moonmpvan" target="_blank" rel="noopener">前往 @MoonMpVan 複製嵌入碼 →</a>
-            </div>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DeUTat7AaC7/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DeUTat7AaC7/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DeUTat7AaC7/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by 沐恩Moon🏂 𝓚𝓮𝓿𝓲𝓷 (@moonmpvan)</a></p></div></blockquote>
           </div>
         </div>
 
-        <!-- 欄位 3：開箱視頻 -->
+        <!-- 欄位 3：裝備開箱視頻 -->
         <div class="reel-embed-slot reveal">
           <div class="reel-slot-header">
             <span class="reel-slot-tag">03 · UNBOXING</span>
-            <span class="reel-slot-title">滑雪裝備開箱實測</span>
+            <span class="reel-slot-title">滑雪裝備開箱</span>
           </div>
           <div class="reel-embed-frame">
-            <!-- 【請刪除下方 embed-placeholder，直接貼上你「開箱視頻」Reel 的 Instagram 嵌入 <blockquote> 代碼】 -->
-            <div class="embed-placeholder">
-              <strong>裝備開箱 Reel</strong>
-              <p>請在此處貼上你的 Instagram「雪具開箱」影片嵌入碼（&lt;blockquote class="instagram-media"...&gt;）</p>
-              <a href="https://www.instagram.com/moonmpvan" target="_blank" rel="noopener">前往 @MoonMpVan 複製嵌入碼 →</a>
-            </div>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DejwHYKAWuC/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DejwHYKAWuC/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DejwHYKAWuC/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by 沐恩Moon🏂 𝓚𝓮𝓿𝓲𝓷 (@moonmpvan)</a></p></div></blockquote>
           </div>
         </div>
       </div>
@@ -1260,7 +1267,7 @@
   <!-- 複製成功提示 -->
   <div id="toast" class="toast">已複製微信帳號 MoonMpVan ✓</div>
 
-  <!-- Instagram 官方嵌入腳本（全頁只需保留這一行，貼上 blockquote 後會自動渲染） -->
+  <!-- Instagram 官方嵌入腳本（全頁只需保留這一行） -->
   <script async src="https://www.instagram.com/embed.js"></script>
 
   <script>
