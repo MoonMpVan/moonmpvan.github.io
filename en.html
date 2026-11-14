@@ -1,204 +1,456 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>沐恩Moon — Ski & Snowboard Coaching</title>
-<meta name="description" content="沐恩Moon, CASI/CSIA certified ski & snowboard instructor. Private and small-group lessons in Vancouver. Now enrolling.">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moon (Kevin) · Mt Seymour Snowboard &amp; Ski Instructor in Vancouver</title>
+  <meta name="description" content="Moon (Kevin), CASI Level 2 Snowboard & CSIA Level 1 Ski Certified Instructor in Vancouver. Private and small-group lessons at Mt Seymour and Niseko." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-<!-- ============ NAV ============ -->
-<nav class="nav">
-  <a class="logo" href="#top">沐恩Moon</a>
-  <div class="nav-links">
-    <a href="index.html" class="lang-toggle">中文</a>
-    <a href="#courses">Lessons</a>
-    <a href="#about">About</a>
-    <a href="#certificates">Certificates</a>
-    <a href="#work">Gallery</a>
-    <a href="#contact" class="nav-cta">Book a Lesson</a>
-  </div>
-</nav>
+  <style>
+    :root {
+      --bg-dark: #090B0E;
+      --bg-card: #12161D;
+      --bg-card-hover: #181E27;
+      --bg-light: #F3F5F8;
+      --text-white: #F8FAFC;
+      --text-muted: #94A3B8;
+      --text-dark: #0F172A;
+      --text-dark-muted: #475569;
+      --accent: #38BDF8;
+      --border-dark: rgba(255, 255, 255, 0.08);
+      --border-light: rgba(15, 23, 42, 0.1);
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius-lg: 20px;
+      --radius-md: 12px;
+    }
 
-<!-- ============ HERO ============ -->
-<header class="hero" id="top">
-  <div class="hero-inner">
-    <p class="hero-kicker">SKI & SNOWBOARD COACHING · VANCOUVER</p>
-    <h1>沐恩Moon</h1>
-    <p class="hero-sub">Ski & Snowboard Instructor<br>From your first turn to carving — ride with confidence.</p>
-    <div class="hero-ctas">
-      <a href="#contact" class="btn btn-primary">Book a Free Consultation</a>
-      <a href="#courses" class="btn btn-ghost">View Lessons</a>
-    </div>
-  </div>
-  <!-- Hero photo -->
-  <img class="hero-bg" src="assets/15.jpg" alt="沐恩Moon snowboarding">
-</header>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<!-- ============ COURSES ============ -->
-<section class="section" id="courses">
-  <p class="kicker">LESSONS</p>
-  <h2>Lessons</h2>
-  <p class="section-lead">Skiing and snowboarding — I teach both. All lessons are on-snow, tailored to your level. Contact me for pricing.</p>
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      font-family: var(--font-body);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  <div class="cards">
-    <div class="card">
-      <h3>First-Timer Experience</h3>
-      <p class="card-en">FIRST TIMER</p>
-      <p>New to the snow? Ski or snowboard, your pick — two hours from zero: gearing up, stance, falling leaf, J-turns. Safety first — no need to fear falling.</p>
-      <ul>
-        <li>2-hour private session</li>
-        <li>Gear rental advice</li>
-        <li>Perfect for total beginners</li>
-      </ul>
-    </div>
-    <div class="card card-featured">
-      <h3>Private Lessons</h3>
-      <p class="card-en">ONE-ON-ONE</p>
-      <p>The fastest way to progress. Ski or snowboard — we break down your weaknesses one by one: edge changes, carving, moguls, park intro — you name it.</p>
-      <ul>
-        <li>2 hours / half day / full day</li>
-        <li>Video movement analysis</li>
-        <li>Beginner to advanced</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Small Group Lessons</h3>
-      <p class="card-en">SMALL GROUP · 2–4 PEOPLE</p>
-      <p>Learn with friends — the best vibes. Come as a group at a similar level and save.</p>
-      <ul>
-        <li>2–4 people</li>
-        <li>From 2 hours</li>
-        <li>Great for friends &amp; family</li>
-      </ul>
-    </div>
-  </div>
-  <p class="note">📍 Main resorts: Mt Seymour / Grouse / Cypress (2026/27 season); Niseko lessons coming for the 2027/28 season.</p>
-</section>
+    img, video {
+      display: block;
+      max-width: 100%;
+    }
 
-<!-- ============ ABOUT ============ -->
-<section class="section section-alt" id="about">
-  <p class="kicker">ABOUT</p>
-  <h2>About Me</h2>
-  <div class="about-grid">
-    <div>
-      <p>I'm 沐恩Moon, a ski and snowboard instructor in Vancouver. 300+ days on snow, 150+ days teaching — I've ridden resorts across Canada, New Zealand, and Japan, from Niseko to local mountains, with students from kids to adults.</p>
-      <p>I believe snowboarding isn't about drilling blindly, but understanding the why behind every movement. In my lessons I break things down in plain language — and replay video frame by frame when it helps.</p>
-    </div>
-    <div>
-      <h3>CERTIFICATIONS</h3>
-      <ul class="certs">
-        <li>CASI Level 1 Snowboard Instructor <span>2023</span></li>
-        <li>CASI Level 2 Snowboard Instructor <span>2024</span></li>
-        <li>CASI Park 1 <span>2024</span></li>
-        <li>China National Level 5 Sports Instructor <span>2024</span></li>
-        <li>AST 1 Avalanche Safety <span>2025</span></li>
-        <li>CSIA Level 1 Ski Instructor <span>2025</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-<!-- ============ CERTIFICATES ============ -->
-<section class="section" id="certificates">
-  <p class="kicker">CERTIFICATES</p>
-  <h2>Certificates</h2>
-  <p class="section-lead">Fully certified, ready to teach. Use the arrows or thumbnails to browse.</p>
-  <div class="carousel">
-    <div class="carousel-stage">
-      <button class="carousel-arrow carousel-prev" aria-label="Previous">‹</button>
-      <img class="carousel-main-img" src="assets/cert1.jpg" alt="CASI Level 1 certificate">
-      <button class="carousel-arrow carousel-next" aria-label="Next">›</button>
-    </div>
-    <p class="carousel-caption">CASI Level 1</p>
-    <div class="carousel-thumbs">
-      <img src="assets/cert1.jpg" data-full="assets/cert1.jpg" data-label="CASI Level 1" class="active" alt="CASI Level 1 certificate">
-      <img src="assets/cert2.jpg" data-full="assets/cert2.jpg" data-label="CASI Level 2" alt="CASI Level 2 certificate">
-      <img src="assets/cert3.jpg" data-full="assets/cert3.jpg" data-label="CASI Park 1" alt="CASI Park 1 certificate">
-      <img src="assets/cert4.jpg" data-full="assets/cert4.jpg" data-label="AST 1" alt="AST 1 certificate">
-      <img src="assets/cert5.jpg" data-full="assets/cert5.jpg" data-label="China Level 5 Instructor" alt="China Level 5 instructor certificate">
-      <img src="assets/cert6.jpg" data-full="assets/cert6.jpg" data-label="CSIA Level 1" alt="CSIA Level 1 certificate">
-    </div>
-  </div>
-</section>
+    .eyebrow {
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+      display: inline-block;
+    }
 
-<!-- ============ WORK ============ -->
-<section class="section" id="work">
-  <p class="kicker">SELECTED WORK</p>
-  <h2>Moments on Snow</h2>
-  <p class="section-lead">Stories from the snow, collected frame by frame.</p>
-  <div class="gallery">
-    <img src="assets/24.jpg" alt="Snowboarding photo 1">
-    <img src="assets/11.jpg" alt="Snowboarding photo 2">
-    <img src="assets/20.jpg" alt="Snowboarding photo 3">
-    <img src="assets/25.jpg" alt="Snowboarding photo 4">
-    <img src="assets/1.jpg" alt="Snowboarding photo 5">
-    <img src="assets/26.jpg" alt="Snowboarding photo 6">
-    <img src="assets/7.jpg" alt="Snowboarding photo 7">
-    <img src="assets/30.jpg" alt="Snowboarding photo 8">
-  </div>
-</section>
+    .section-light .eyebrow {
+      color: #0284C7;
+    }
 
-<!-- ============ CONTACT ============ -->
-<section class="section section-alt" id="contact">
-  <p class="kicker">CONTACT</p>
-  <h2>Get in Touch</h2>
-  <p class="section-lead">Want to book, ask about lessons, or just talk snowboarding — reach out.</p>
+    .container {
+      width: min(1180px, 90vw);
+      margin: 0 auto;
+    }
 
-  <div class="contact-grid">
-    <div class="contact-links">
-      <!-- Replace hrefs with your real links -->
-      <a class="contact-row" href="https://www.instagram.com/moonmpvan" target="_blank" rel="noopener">
-        <span class="contact-label">Instagram</span>
-        <span class="contact-value">@MoonMpVan →</span>
-      </a>
-      <div class="contact-row qr-trigger" id="wechat-qr" role="button" tabindex="0" title="Click to view QR code">
-        <span class="contact-label">WeChat</span>
-        <span class="contact-value">MoonMpVan · click for QR →</span>
-      </div>
-      <a class="contact-row" href="mailto:hunglc23@gmail.com">
-        <span class="contact-label">Email</span>
-        <span class="contact-value">hunglc23@gmail.com →</span>
-      </a>
-      <p class="note">Or use the form — your message goes straight to my email.</p>
-    </div>
+    /* Sticky Glass Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1rem 0;
+      background: rgba(9, 11, 14, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-dark);
+    }
 
-    <!-- Form: register free at formspree.io, then replace YOUR_FORM_ID below -->
-    <form class="contact-form" action="https://formspree.io/f/mnpjwegy" method="POST">
-      <label>Name
-        <input type="text" name="name" required placeholder="What should I call you?">
-      </label>
-      <label>How to reach you (IG / WeChat / phone)
-        <input type="text" name="contact" required placeholder="So I can reply">
-      </label>
-      <label>Interested in
-        <select name="interest">
-          <option>First-timer experience</option>
-          <option>Private lessons</option>
-          <option>Small group lessons</option>
-          <option>Other / not sure yet</option>
-        </select>
-      </label>
-      <label>Message
-        <textarea name="message" rows="4" placeholder="Your level, what you want to learn, when you're free…"></textarea>
-      </label>
-      <button type="submit" class="btn btn-primary">Send</button>
-    </form>
-  </div>
-</section>
+    .nav-inner {
+      width: min(1180px, 90vw);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
 
-<footer>
-  <p>© 2026 沐恩Moon · Ski & Snowboard Coaching</p>
-</footer>
+    .brand {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-<!-- WeChat QR popup -->
-<div class="modal" id="qr-modal" aria-hidden="true">
-  <div class="modal-backdrop"></div>
-  <img src="assets/wxqrcode.jpg" alt="WeChat QR code MoonMpVan">
-</div>
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+    }
 
-<script src="script.js"></script>
-</body>
-</html>
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-white);
+    }
+
+    .nav-lang {
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.25rem 0.7rem;
+      border: 1px solid var(--border-dark);
+      border-radius: 999px;
+      color: var(--text-white);
+    }
+
+    .nav-cta {
+      background: var(--text-white);
+      color: var(--bg-dark);
+      padding: 0.45rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+      color: var(--bg-dark);
+      transform: translateY(-1px);
+    }
+
+    /* Full-Viewport Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 8rem 0 3.5rem;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      filter: brightness(0.76) contrast(1.06);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        180deg,
+        rgba(9, 11, 14, 0.35) 0%,
+        rgba(9, 11, 14, 0.45) 45%,
+        rgba(9, 11, 14, 0.96) 95%,
+        #090B0E 100%
+      );
+    }
+
+    .hero-content {
+      max-width: 740px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.15rem;
+    }
+
+    .hero-sub {
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      color: #CBD5E1;
+      max-width: 580px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .btn-primary {
+      background: var(--text-white);
+      color: var(--bg-dark);
+      padding: 0.9rem 1.85rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text-white);
+      padding: 0.9rem 1.85rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.25s ease;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: var(--text-white);
+    }
+
+    /* Hero Stats Bar */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .stat-item strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+      font-weight: 700;
+      color: var(--text-white);
+      line-height: 1.2;
+    }
+
+    .stat-item span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Shared Section Layout */
+    section {
+      padding: 6.5rem 0;
+    }
+
+    .section-header {
+      max-width: 660px;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.18;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+    }
+
+    /* Courses Section */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .course-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-6px);
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .course-card.featured {
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.08) 0%, var(--bg-card) 45%);
+    }
+
+    .badge-popular {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--bg-dark);
+    }
+
+    .course-en {
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .course-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.48rem;
+      margin-bottom: 1rem;
+    }
+
+    .course-desc {
+      color: #CBD5E1;
+      font-size: 0.95rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .course-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .course-tags li {
+      font-size: 0.8rem;
+      padding: 0.32rem 0.75rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #E2E8F0;
+    }
+
+    .resort-banner {
+      margin-top: 2rem;
+      padding: 1.25rem 1.6rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-dark);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.92rem;
+      color: #CBD5E1;
+    }
+
+    .resort-banner strong {
+      color: var(--text-white);
+    }
+
+    /* About & Interactive Credentials (Light Contrast Section) */
+    .section-light {
+      background: var(--bg-light);
+      color: var(--text-dark);
+    }
+
+    .section-light .section-header p {
+      color: var(--text-dark-muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .profile-card {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      background: #FFFFFF;
+      padding: 1.25rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      margin-bottom: 1.8rem;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .profile-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 16px;
+      object-fit: cover;
+      object-position: center top;
+      flex-shrink: 0;
+      background: #E2E8F0;
+    }
+
+    .profile-meta strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.22rem;
+      color: var(--text-dark);
+      margin-bottom: 0.2rem;
+    }
+
+    .profile-meta span {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--text-dark-muted);
+    }
+
+    .about-story p {
+      font-size: 1.04rem;
+      color: #1
